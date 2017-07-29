@@ -1,0 +1,23 @@
+{
+  "name": "projetopospedrotelles",
+  "version": "1.0.0",
+  "description": "Projeto DM 104 - Pedro Telles",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedrotelles/projetoPosPedroTelles.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pedrotelles/projetoPosPedroTelles/issues"
+  },
+  "homepage": "https://github.com/pedrotelles/projetoPosPedroTelles#readme",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
