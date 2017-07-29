@@ -21,8 +21,9 @@
   "homepage": "https://github.com/pedrotelles/projetoPosPedroTelles#readme",
   "keywords": [],
   "dependencies": {
+    "body-parser": "^1.17.2",
+    "bulma": "^0.4.4",
     "express": "^4.15.3",
-    
     "materialize-css": "^0.100.1"
   }
 }

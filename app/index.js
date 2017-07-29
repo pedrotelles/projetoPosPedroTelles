@@ -8,7 +8,7 @@ app.use(bodyParser.json())
 app.use(express.static('public'))
 
 //Subscriber API
-app.use('/api/subscribers', require('./subscriberApi'))
+//app.use('/api/subscribers', require('./subscriberApi'))
 // app.use('/api/products', require('./productsApi'))
 
 //sever startup
