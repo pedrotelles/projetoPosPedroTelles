@@ -1,7 +1,7 @@
 const express = require('express')
-const PouchDB = require('pouchdb');
+const lowDB = require('lowdb');
 const router = express.Router();
-
+lowDB.)
 var db = new PouchDB('http://localhost:5984/donaRita');
 db.info().then(function (info) {
   console.log(info);
@@ -20,6 +20,6 @@ var doc = {
 db.put(doc);
 router.get('/', (request, response) => {
 
-    console.log((db.get('mittens')));
+    return ((db.get('mittens')));
 });
 module.exports = router;
