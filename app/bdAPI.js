@@ -1,25 +1,22 @@
 const express = require('express')
-const lowDB = require('lowdb');
+const low = require('lowdb');
 const router = express.Router();
-lowDB.)
-var db = new PouchDB('http://localhost:5984/donaRita');
-db.info().then(function (info) {
-  console.log(info);
-})
-var doc = {
-  "_id": "mittens",
-  "name": "Mittens",
-  "occupation": "kitten",
-  "age": 3,
-  "hobbies": [
-    "playing with balls of yarn",
-    "chasing laser pointers",
-    "lookin' hella cute"
-  ]
-};
-db.put(doc);
+const db = low('db.json')
+db.defaults({ posts: [], user: [],produtos:[] }).write()
+db.get('posts')  
+  .push({ id: 1, title: 'lowdb is awesome'})
+  .write();
+db.set('produtos',[{ id: 1, title: 'lowdb is awesome'}])
+
+ 
 router.get('/', (request, response) => {
 
-    return ((db.get('mittens')));
+    response.json(
+
+      db.get('posts')
+        .find({ id: 1 })
+        .value()
+
+    );
 });
 module.exports = router;
