@@ -5122,9 +5122,10 @@ a.nav-item:not(.button).is-tab.is-active {
 }
 
 .navbar-burger span {
-  background-color: #4a4a4a;
+  background-color: white;
   display: block;
   height: 1px;
+  background-color: white;
   left: 50%;
   margin-left: -7px;
   position: absolute;
@@ -5151,7 +5152,7 @@ a.nav-item:not(.button).is-tab.is-active {
 }
 
 .navbar-burger:hover {
-  background-color: whitesmoke;
+  background-color: red;
 }
 
 .navbar-burger.is-active span {
