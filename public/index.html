@@ -36,13 +36,13 @@
           <a class="nav-item">
             Sobre
           </a>
-          <a class="nav-item">
-            Login
+          <a href="register.html" class="nav-item">
+            Login/Registre-se
           </a>
-          <a class="nav-item">
+          <a class="nav-item has-dropdown is-hoverable">
               
               <span class="icon" >
-                <i class="fa fa-shopping-cart fa-stack-1x"></i>
+                <i class="fa fa-shopping-cart"></i>
               </span>
           </a>
           
@@ -67,35 +67,32 @@
 
 
 </section>
-<div class="container section" id="content">
-<div class="columns">
-  <div class="column is-4">
+
+
+<div class="container section" >
+<h2 style="font-size:70px;"><b>Nossos Produtos</b></h2>
+<hr>
+<div class="tabs is-large is-dark" id="app-5">
+  <ul>
+    <li v-for="tipo in tipos" v-bind:class="{ 'is-active': isone(tipo)}"><a>{{tipo.nomeTipo}}</a></li>
+  </ul>
+</div>
+<div class="columns is-multiline  is-mobile" id="app-4">
+  <div class="column is-4" v-for="todo in produtos">
   <div class="card">
   <div class="card-image">
     <figure class="image is-4by3">
-      <img src="http://bulma.io/images/placeholders/1280x960.png" alt="Image">
+      <img v-bind:src="todo.link" alt="Image">
     </figure>
   </div>
   <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-48x48">
-          <img src="http://bulma.io/images/placeholders/96x96.png" alt="Image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-4">John Smith</p>
-        <p class="subtitle is-6">@johnsmith</p>
-      </div>
-    </div>
-
+    
+    <div style="font-size:20px;">
+      <b>{{todo.descricao}}</b>
+    </div><hr>
     <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a>#css</a> <a>#responsive</a>
-      <br>
-      <small>11:09 PM - 1 Jan 2016</small>
-    </div>
+      {{todo.descricao}}
+    </div><hr>
     <a class="button is-dark">Comprar</a>
   </div>
 </div>
@@ -121,6 +118,8 @@
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/bulma.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://unpkg.com/vue"></script>
   <script src="js/myJs.js"></script>
 
   </body>
