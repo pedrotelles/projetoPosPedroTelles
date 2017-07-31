@@ -1,3 +1,4 @@
+
 var app4 = new Vue({
   el: '#app-4',
   data: {
@@ -7,35 +8,51 @@ var app4 = new Vue({
     this.fetchData();
   },
 methods: {
-    isClicked: function(item){
-        $.post( "/api/bd/produto/id", function( data ) {
-        self.produtos = data;
-        console.log(data);
-    });
-    },
+    
     fetchData: function () {
     var self = this;
-    $.get( "/api/bd/produtos", function( data ) {
+    $.get( "/api/bd/produtos", function( data2 ) {
         self.produtos = data;
         console.log(data);
+        
     });
 
-    }}
+    },
+    fetchDataById:function(id){
+        var self = this;
+        $.get( "/api/bd/produtos/"+id, function( data2 ) {
+            self.produtos=[];
+            self.produtos = data2;
+            console.log(data2);
+            console.log(id)
+        });
+    }
+}
 });
 
 var app5 = new Vue({
   el: '#app-5',
   data: {
-    tipos: []
+    tipos: [],
+    count: 1
   },
  created: function () {
     this.fetchData();
   },
 methods: {
-    
+
     isone : function(tipo){
-        return tipo.id == 1
-        },
+        if(tipo.id==this.count){
+            app4.fetchDataById(tipo.id);
+           
+        }
+         return tipo.id == this.count
+    },
+    clickme:function(tipo){
+        this.count=tipo
+        app4.fetchDataById(tipo);
+        
+    },
     fetchData: function () {
     var self = this;
     $.get( "/api/bd/tipos", function( data ) {
@@ -45,3 +62,4 @@ methods: {
 
     }}
 });
+

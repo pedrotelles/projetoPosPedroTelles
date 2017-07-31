@@ -21,54 +21,56 @@
             </h1>
             <div class="box">
               <label class="label" style="text-decoration:underline;">LOGIN</label>
+              <form action="/api/db/login" method="post">
               
-              
-              <label class="label">Email</label>
+              <label class="label">Usuario</label>
               <p class="control">
-                <input class="input" type="text" placeholder="jsmith@example.org">
+                <input class="input" type="text" name="user" placeholder="test">
               </p>
               
               <label class="label">Senha</label>
               <p class="control">
-                <input class="input" type="password" placeholder="●●●●●●●">
+                <input class="input" type="password" name="password" placeholder="●●●●●●●">
               </p>
               
               <hr>
               <p class="control">
-                <button class="button is-dark">Login</button>
+                <button class="button is-dark" type="submit">Login</button>
                 
               </p>
+              </form>
                <hr>
                <label class="label" style="text-decoration:underline;">REGISTRO</label>
+               <form action="/api/db/user" method="post">
               <label class="label">Nome</label>
               <p class="control">
-                <input class="input" type="text" placeholder="John Smith">
+                <input class="input" type="text" name = "name"placeholder="John Smith">
               </p>
               <label class="label">Usuario</label>
               <p class="control">
-                <input class="input" type="text" placeholder="jsmith">
+                <input class="input" type="text" name = "user" placeholder="jsmith">
               </p>
               <label class="label">Email</label>
               <p class="control">
-                <input class="input" type="text" placeholder="jsmith@example.org">
+                <input class="input" type="text" name = "email" placeholder="jsmith@example.org">
               </p>
               <hr>
               <label class="label">Senha</label>
               <p class="control">
-                <input class="input" type="password" placeholder="●●●●●●●">
+                <input class="input" type="password" name = "password" placeholder="●●●●●●●">
               </p>
               <label class="label">Repita a Senha</label>
               <p class="control">
-                <input class="input" type="password" placeholder="●●●●●●●">
+                <input class="input" type="password" name = "password" placeholder="●●●●●●●">
               </p>
               <hr>
               <p class="control">
-                <button class="button is-dark">Registrar</button>
-                <button class="button is-default">Cancelar</button>
+                <button class="button is-dark" type="submit">Registrar</button>
+                <button class="button is-default" onclick="window.location.href='/';">Cancelar</button>
               </p>
-              
-              
-            </div>
+              </form>
+              </div>
+            
          
 
 
@@ -80,5 +82,5 @@
     </div>
 
   </section>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://cdn.auth0.com/js/auth0/8.8/auth0.min.js"></script>
 </body>

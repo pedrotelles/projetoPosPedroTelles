@@ -13,7 +13,14 @@
       "title": "lowdb is awesome"
     }
   ],
-  "user": [],
+  "user": [
+    {
+      "id": 1,
+      "nome": "Pedro",
+      "usuario": "admin",
+      "senha": "admin"
+    }
+  ],
   "produtos": [
     {
       "id": 1,
@@ -62,7 +69,7 @@
     },
     {
       "id": 6,
-      "nome": "BISCOITO DE AVEIA",
+      "nome": "Biscoito de Aveia",
       "descricao": "Biscoito de Aveia Tradicional",
       "link": "http://img.itdg.com.br/tdg/images/recipes/000/191/877/279095/279095_original.jpg?mode=crop&width=370&height=278",
       "idTipo": "2",
@@ -78,10 +85,6 @@
     {
       "id": 2,
       "nomeTipo": "Biscoitos"
-    },
-    {
-      "id": 3,
-      "nomeTipo": "Pão de Mel"
     }
   ]
 }

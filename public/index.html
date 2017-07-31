@@ -74,7 +74,7 @@
 <hr>
 <div class="tabs is-large is-dark" id="app-5">
   <ul>
-    <li v-for="tipo in tipos" v-bind:class="{ 'is-active': isone(tipo)}"><a>{{tipo.nomeTipo}}</a></li>
+    <li v-for="tipo in tipos" v-bind:class="{ 'is-active': isone(tipo)}" v-on:click="clickme(tipo.id);document.getElementById(this).class;"><a>{{tipo.nomeTipo}}</a></li>
   </ul>
 </div>
 <div class="columns is-multiline  is-mobile" id="app-4">
@@ -88,7 +88,7 @@
   <div class="card-content">
     
     <div style="font-size:20px;">
-      <b>{{todo.descricao}}</b>
+      <b>{{todo.nome | uppercase}}</b>
     </div><hr>
     <div class="content">
       {{todo.descricao}}
@@ -120,7 +120,9 @@
   <script src="js/bulma.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="https://unpkg.com/vue"></script>
+  <script src="js/vue2-filters.min.js"></script>
   <script src="js/myJs.js"></script>
+
 
   </body>
 </html>
