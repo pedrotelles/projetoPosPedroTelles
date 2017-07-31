@@ -26,6 +26,7 @@
     "bulma": "^0.4.4",
     "connect-ensure-login": "^0.1.1",
     "connect-redis": "^3.3.0",
+    "cors": "^2.8.4",
     "express": "^4.15.3",
     "express-pouchdb": "^2.3.7",
     "express-session": "^1.15.4",

@@ -1,24 +1,43 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "lowdb is awesome"
-    },
-    {
-      "id": 1,
-      "title": "lowdb is awesome"
-    },
-    {
-      "id": 1,
-      "title": "lowdb is awesome"
-    }
-  ],
   "user": [
     {
-      "id": 1,
-      "nome": "Pedro",
-      "usuario": "admin",
-      "senha": "admin"
+      "ativo": "1"
+    },
+    {
+      "ativo": "1"
+    },
+    {
+      "ativo": "1"
+    },
+    {
+      "ativo": "1"
+    },
+    {
+      "ativo": "1"
+    },
+    {
+      "ativo": "1"
+    },
+    {
+      "ativo": "1"
+    },
+    {
+      "ativo": "1"
+    },
+    {
+      "ativo": "1"
+    },
+    {
+      "ativo": "1"
+    },
+    {
+      "ativo": "1"
+    },
+    {
+      "ativo": "1"
+    },
+    {
+      "ativo": "1"
     }
   ],
   "produtos": [
@@ -85,6 +104,60 @@
     {
       "id": 2,
       "nomeTipo": "Biscoitos"
+    }
+  ],
+  "session": [
+    {
+      "ativo": "1",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "ativo": "1",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "ativo": "1",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "ativo": "1",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "ativo": "1",
+      "ip": "::ffff:127.0.0.1"
+    },
+    {
+      "ativo": "1",
+      "ip": "::1"
+    },
+    {
+      "ativo": "1",
+      "ip": "::1"
+    },
+    {
+      "ativo": "1",
+      "ip": "::1"
+    },
+    {
+      "ativo": "1",
+      "ip": "::1"
+    },
+    {
+      "ativo": "1",
+      "ip": "::1"
+    },
+    {
+      "ativo": "1",
+      "ip": "::1"
+    },
+    {
+      "ativo": "1",
+      "ip": "::1"
+    },
+    {
+      "ativo": "1",
+      "ip": "::1"
     }
   ]
 }

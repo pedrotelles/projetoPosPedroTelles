@@ -2,9 +2,14 @@ const express = require('express')
 const low = require('lowdb');
 const router = express.Router();
 const db = low('db.json')
+const bodyParser = require('body-parser');
 var count = 1
-db.defaults({  user: [],produtos:[],tipoProduto:[] }).write()
+var app = express()
+var cors = require('cors')
+app.use(express.static('public'));
 
+db.defaults({  user: [],produtos:[],tipoProduto:[],session:[] }).write()
+app.use(cors({credentials: true, origin: true}))
 db.set('produtos',[{ id: 1, nome: 'Rosquinha Tradicional',descricao:"Rosquinha recheada com o doce sabor de casa",link:"http://img.itdg.com.br/tdg/images/recipes/000/008/602/30668/30668_original.jpg?mode=crop&width=370&height=278",idTipo:"1",preco:12.50,estoque:10},
                    { id: 2, nome: 'Rosquinha Vulcão',descricao:"Rosquinha recheada com muito mais chocolate e creme",link:"http://img.itdg.com.br/tdg/images/recipes/000/008/602/30668/30668_original.jpg?mode=crop&width=370&height=278",idTipo:"1",preco:12.50,estoque:10},
                    { id: 3, nome: 'Rosquinha de Chocolate',descricao:"Rosquinha com sabor do brigadeiro mais trufado...",link:"http://img.itdg.com.br/tdg/images/recipes/000/008/602/30668/30668_original.jpg?mode=crop&width=370&height=278",idTipo:"1",preco:12.50,estoque:10},
@@ -39,24 +44,43 @@ router.get('/tipos', (request, response) => {
 
     );
 });
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', 'example.com');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
 
-router.post('/user',(request, response) => {
-    var nome = req.body.name;
-    var email = req.body.email;
+    next();
+};
+app.use(allowCrossDomain);
+router.post('/user',(req, res) => {
+    var name = req.body.name;
+    var mail = req.body.email;
     var user = req.body.user;
     var password = req.body.password;
+    var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    console.log(req.body.objectData);
     db.get('user')
-  .push({ nome:nome,usuario:user,senha:password,email:email,ativo:'1'})
-  .write()
+  .push({ nome:name,usuario:user,senha:password,email:mail,ativo:'1'})
+  .write();
+    db.get('session')
+  .push({ nome:name,usuario:user,senha:password,email:mail,ativo:'1',ip: ip})
+  .write();
+  
 
+  res.redirect('/')
+  
 });
-router.post('/login',(request, response) => {
-    var nome = req.body.name;
-    var email = req.body.email;
-    var user = req.body.user;
-    var password = req.body.password;
-    db.get('user').find({usuario:user}).assign({ title: 'hi!'}).write()
-    response.json(db.get('user').find({usuario:user}));
+router.get('/login',(req, res) => {
+
+
+    var user = req.params.user;
+    var password = req.params.password;
+    req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    db.get('session')
+  .push({ usuario:user,senha:password,ativo:'1'})
+  .write();
+   
+    res.redirect('/');
 
 });
 
